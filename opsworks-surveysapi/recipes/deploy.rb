@@ -4,7 +4,7 @@ layer = search('aws_opsworks_layer', "layer_id:#{instance['layer_ids'].first}").
 
 # user layer name as app
 #app_data = search('aws_opsworks_app', "name:#{layer['name']}").first  
-app_data = search('aws_opsworks_app', "id:1915b21a-5396-47b8-8688-0980e5780d8e").first  
+app_data = search('aws_opsworks_app', "app_id:1915b21a-5396-47b8-8688-0980e5780d8e").first  
 
 fail 'could not find app' unless app_data
 
