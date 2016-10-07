@@ -1,9 +1,9 @@
 # get own instances + layer name
-instance = search('aws_opsworks_instance', 'self:true').first  
-layer = search('aws_opsworks_layer', "layer_id:#{instance['layer_ids'].first}").first
+instance = search('i-011bcd5bc4e3526b7', 'self:true').first  
+layer = search('SurveysApiDev', "layer_id:#{instance['layer_ids'].first}").first
 
 # user layer name as app
-app_data = search('aws_opsworks_app', "name:#{layer['name']}").first  
+app_data = search('hello_world', "name:#{layer['name']}").first  
 fail 'could not find app' unless app_data
 
 # deploy the application
