@@ -33,7 +33,7 @@ action :run do
   end
 
   template "/etc/init/#{service_name}.conf" do
-    source 'upstart.conf.erb'
+    source 'systemd.conf.erb'
     cookbook 'surveysapi'
     mode '0600'
     variables(
@@ -47,10 +47,10 @@ action :run do
   end
 
   service service_name do
-    provider Chef::Provider::Service::Upstart
+    provider Chef::Provider::Service::Systemd
     action :start
-    subscibes :restart, "git[#{dir}]", :delayed
-    subscibes :restart, "execute[npm prune #{service_name}]", :delayed
-    subscibes :restart, "execute[npm install #{service_name}]", :delayed
+    subscribes :restart, "git[#{dir}]", :delayed
+    subscribes :restart, "execute[npm prune #{service_name}]", :delayed
+    subscribes :restart, "execute[npm install #{service_name}]", :delayed
   end
 end  
