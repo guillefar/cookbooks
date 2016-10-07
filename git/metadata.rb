@@ -24,7 +24,7 @@ supports 'suse'
 supports 'opensuse'
 supports 'opensuseleap'
 supports 'ubuntu'
-supports 'windows'
+#supports 'windows'
 
 depends 'build-essential'
 depends 'dmg'
