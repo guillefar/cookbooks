@@ -7,9 +7,6 @@ property :run_cmd, String, default: '/usr/local/bin/npm start'
 property :run_environment, Hash, default: {}
 
 
-#   deploy attributes
-default['opsworks-surveysapi']['basedir'] = '/opt'  
-default['opsworks-surveysapi']['run-cmd'] = 'npm start'  
 
 default_action :run
 

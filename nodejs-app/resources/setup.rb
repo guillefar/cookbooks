@@ -2,10 +2,6 @@ property :nodejs_version, String, default: '5.10.1'
 property :nodejs_checksum, String
 
 
-# attribute
-#   setup attributes
-default['opsworks-surveysapi']['nodejs']['version'] = '6.5.0'  
-default['opsworks-surveysapi']['nodejs']['checksum'] = '...'
 
 
 
