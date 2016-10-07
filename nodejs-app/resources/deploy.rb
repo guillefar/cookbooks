@@ -34,7 +34,7 @@ action :run do
 
   template "/etc/init/#{service_name}.conf" do
     source 'systemd.conf.erb'
-    cookbook 'surveysapi'
+    cookbook 'nodejs-app'
     mode '0600'
     variables(
       name: service_name,
