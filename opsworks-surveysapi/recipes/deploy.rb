@@ -7,11 +7,11 @@ app_data = search('aws_opsworks_app', "name:#{layer['name']}").first
 fail 'could not find app' unless app_data
 
 # deploy the application
-node_app_deploy '<node></node>-app' do  
+nodejs_app_deploy '<node></node>-app' do  
   ssh_key app_data['app_source']['ssh_key']
-  dir ::File.join(node['opsworks-surveyapi']['basedir'], app_data['name'])
+  dir ::File.join(node['opsworks-surveysapi']['basedir'], app_data['name'])
   git_repository app_data['app_source']['url']
   git_revision app_data['app_source']['revision']
-  run_cmd node['opsworks-surveyapi']['run-cmd']
+  run_cmd node['opsworks-surveysapi']['run-cmd']
   run_environment app_data['environment']
 end  
