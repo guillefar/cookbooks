@@ -1,5 +1,5 @@
 # get own instances + layer name
-instance = search('surapidev1', 'self:true').first  
+instance = search('2396cb97-7dd7-4c8a-b55a-acfc1ebcc2db', 'self:true').first  
 layer = search('SurveysApiDev', "layer_id:#{instance['layer_ids'].first}").first
 
 # user layer name as app
