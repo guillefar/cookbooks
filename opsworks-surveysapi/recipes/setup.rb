@@ -1,6 +1,6 @@
 
 
 nodejs_app_setup 'nodejs-app' do  
-  nodejs_version node['opsworks-nodejs-app']['nodejs']['version']
-  nodejs_checksum node['opsworks-nodejs-app']['nodejs']['checksum']
+  nodejs_version node['opsworks-surveysapi']['nodejs']['version']
+  nodejs_checksum node['opsworks-surveysapi']['nodejs']['checksum']
 end  
