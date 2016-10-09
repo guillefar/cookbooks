@@ -14,7 +14,7 @@ action :run do
   # 2. install nodejs
   node.default['nodejs']['install_method'] = 'binary'
   node.default['nodejs']['version'] = nodejs_version
-  node.default['nodejs']['binary']['checksum']['linux_x64'] = nodejs_checksum
+#  node.default['nodejs']['binary']['checksum']['linux_x64'] = nodejs_checksum
   include_recipe 'nodejs'
   include_recipe 'nodejs::npm'
 end  
