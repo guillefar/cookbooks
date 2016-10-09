@@ -18,4 +18,10 @@ action :run do
 #  include_recipe 'nodejs'
   node.default['nodejs']['npm']['install_method'] = 'package'
   include_recipe 'nodejs::npm'
+
+apt_package 'npm' do
+  action : upgrade                     
+end
+
 end  
+
