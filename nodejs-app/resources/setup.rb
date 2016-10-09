@@ -20,7 +20,7 @@ action :run do
   include_recipe 'nodejs::npm'
 
 apt_package 'npm' do
-  action : upgrade                     
+  action :upgrade                     
 end
 
 end  
