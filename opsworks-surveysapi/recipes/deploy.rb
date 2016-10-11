@@ -9,7 +9,7 @@ app_data = search('aws_opsworks_app', "app_id:1915b21a-5396-47b8-8688-0980e5780d
 fail 'could not find app' unless app_data
 
 # deploy the application
-nodejs_app_deploy 'nodejs-app' do  
+nodejs_app_deploy 'server.js' do  
   ssh_key app_data['app_source']['ssh_key']
   dir ::File.join(node['opsworks-surveysapi']['basedir'], app_data['name'])
   git_repository app_data['app_source']['url']

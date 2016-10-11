@@ -7,7 +7,9 @@ ExecStart=<%= @cmd %>
 ExecReload=/bin/kill -<%= @reload_signal %> $MAINPID
 KillSignal=<%= @stop_signal %>
 User=<%= @user %>
-WorkingDirectory=<%= @directory %>
+#WorkingDirectory=<%= @directory %>
+#WorkingDirectory=<%= @chdir %>
+
 Restart=<%= @restart_mode %>
 
 [Install]
