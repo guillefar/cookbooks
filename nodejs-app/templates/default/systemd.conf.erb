@@ -11,6 +11,14 @@ User=<%= @user %>
 #WorkingDirectory=<%= @chdir %>
 
 Restart=<%= @restart_mode %>
+RestartSec=10                       # Restart service after 10 seconds if node service crashes
+StandardOutput=syslog               # Output to syslog
+StandardError=syslog                # Output to syslog
+
+#User=<alternate user>
+#Group=<alternate group>
+
+
 
 [Install]
 WantedBy=multi-user.target

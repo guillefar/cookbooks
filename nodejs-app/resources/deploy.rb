@@ -48,9 +48,16 @@ action :run do
 
   service service_name do
     provider Chef::Provider::Service::Systemd
-    action :start
-    subscribes :restart, "git[#{dir}]", :delayed
-    subscribes :restart, "execute[npm prune #{service_name}]", :delayed
-    subscribes :restart, "execute[npm install #{service_name}]", :delayed
+
+   action [:enable, :restart]
+
+#    action :start
+#    subscribes :restart, "git[#{dir}]", :delayed
+ #   subscribes :restart, "execute[npm prune #{service_name}]", :delayed
+ #   subscribes :restart, "execute[npm install #{service_name}]", :delayed
+
   end
+
+
+  
 end  
