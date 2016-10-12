@@ -32,7 +32,7 @@ action :run do
     cwd dir
   end
 
-  template "/etc/init/#{service_name}.conf" do
+  template "/etc/systemd/system/#{service_name}.service" do
     source 'systemd.conf.erb'
     cookbook 'nodejs-app'
     mode '0600'
@@ -59,5 +59,5 @@ action :run do
   end
 
 
-  
+
 end  
