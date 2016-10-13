@@ -13,6 +13,7 @@ default['opsworks-surveysapi']['nodejs']['checksum'] = 'd7742558bb3331e41510d6e6
 
 
 #   deploy attributes
-default['opsworks-surveysapi']['basedir'] = '/var/www/hello_world/'  
+default['opsworks-surveysapi']['basedir'] = '/var/www/'  
 default['opsworks-surveysapi']['run-cmd'] = '/var/www/hello_world/bin/server'
   default['opsworks-surveysapi']['restart'] = 'always'
+default['opsworks-surveysapi']['ssh_key']  =
