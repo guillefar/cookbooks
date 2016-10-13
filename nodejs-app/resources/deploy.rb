@@ -49,7 +49,8 @@ action :run do
   service service_name do
     provider Chef::Provider::Service::Systemd
 
-   action [:enable, :restart]
+   action [:enable, :stop]
+   action [:start]
 
 #    action :start
 #    subscribes :restart, "git[#{dir}]", :delayed

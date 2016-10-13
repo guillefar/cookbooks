@@ -11,7 +11,7 @@ fail 'could not find app' unless app_data
 # deploy the application
 nodejs_app_deploy 'server' do  
   ssh_key app_data['app_source']['ssh_key']
-  dir ::File.join(node['opsworks-surveysapi']['basedir'], app_data['slug_name'])
+  dir ::File.join(node['opsworks-surveysapi']['basedir'], app_data['shortname'])
   git_repository app_data['app_source']['url']
   git_revision app_data['app_source']['revision']
   run_cmd node['opsworks-surveysapi']['run-cmd']
