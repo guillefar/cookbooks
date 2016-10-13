@@ -1,6 +1,6 @@
 # get own instances + layer name
 instance = search('aws_opsworks_instance', 'self:true').first  
-layer = search('aws_opsworks_layer', "layer_id:#{instance['layer_ids'].first}").first
+layer = search('aws_opsworks_layer', "shortname:surveysapi").first
 
 # user layer name as app
 #app_data = search('aws_opsworks_app', "name:#{layer['name']}").first  
