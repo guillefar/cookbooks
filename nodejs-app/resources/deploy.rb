@@ -22,12 +22,13 @@ action :run do
     action :sync
   end
 
+#  execute "npm prune #{service_name}" do
   execute "npm prune #{service_name}" do
     command 'npm prune'
     cwd dir
   end
 
-  execute "npm install #{service_name}" do
+  execute "npm install #{service_name} #{dir} " do
     command 'npm install'
     command 'npm install istanbul -g'
     cwd dir
