@@ -2,8 +2,9 @@
 Description=<%= @name %>
 
 [Service]
-Environment=<%= @environment.map {|key, val| %Q{"#{key}=#{val}"} }.join(' ') %>
 ExecStart=<%= @cmd %>
+
+#Environment=<%= @environment.map {|key, val| %Q{"#{key}=#{val}"} }.join(' ') %>
 #ExecReload=/bin/kill -<%= @reload_signal %> $MAINPID
 #KillSignal=<%= @stop_signal %>
 #User=<%= @user %>
