@@ -30,7 +30,6 @@ action :run do
 
   execute "npm install #{service_name} #{dir} " do
     command 'npm install'
-    command 'npm install istanbul -g'
     cwd dir
   end
 
