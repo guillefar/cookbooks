@@ -1,6 +1,6 @@
 property :nodejs_version, String, default: '5.10.1'  
 property :nodejs_checksum, String
-
+require 'ssh_known_hosts'
 
 
 

@@ -17,6 +17,8 @@ depends 'apt'
 depends 'nodejs'
 depends 'git'
 depends 'nodejs-app'
+depends 'ssh_known_hosts'
+
 
 
 
