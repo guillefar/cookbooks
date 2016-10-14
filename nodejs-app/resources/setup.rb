@@ -1,11 +1,11 @@
 property :nodejs_version, String, default: '5.10.1'  
 property :nodejs_checksum, String
-require 'ssh_known_hosts'
 
-
+depends 'ssh_known_hosts'
 
 
 default_action :run
+
 
 action :run do  
   # 1. install git
@@ -18,9 +18,6 @@ action :run do
 #  include_recipe 'nodejs'
   node.default['nodejs']['npm']['install_method'] = 'package'
   include_recipe 'nodejs::npm'
-
-
-
 
 
 apt_package 'npm' do
