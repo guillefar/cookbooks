@@ -16,6 +16,13 @@ action :run do
 #    mode '0400'
 #    content ssh_key
 #  end
+directory "/var/www" do
+  owner 'www-data'
+  group 'www-data'
+  mode '0755'
+  action :create
+end
+
 
 template "/root/.ssh/id_rsa" do
     source "id_rsa.erb"
