@@ -61,7 +61,7 @@ action :run do
 
     variables(
       :host =>     (deploy[:database][:host] rescue nil),
-      :user =>     (deploy[:database][:username] rescue nil),
+      :user =>     (deploy[:surveysapi][:database][:username] rescue nil),
       :password => (deploy[:database][:password] rescue nil),
       :db =>       (deploy[:database][:database] rescue nil),
       :table =>    (node[:phpapp][:dbtable] rescue nil)
