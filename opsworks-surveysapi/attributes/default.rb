@@ -17,3 +17,8 @@ default['opsworks-surveysapi']['basedir'] = '/var/www/'
 default['opsworks-surveysapi']['run-cmd'] = '/usr/bin/node /var/www/surveysapi/server.js'
   default['opsworks-surveysapi']['restart'] = 'always'
 #default['opsworks-surveysapi']['ssh_key']  =
+#run_environment(
+#    'NODE_ENV' => 'production',
+#    'PORT' => 8080
+#  )
+

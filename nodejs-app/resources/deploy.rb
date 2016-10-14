@@ -29,8 +29,8 @@ action :run do
   end
 
   execute "npm install #{service_name} #{dir} " do
-    command 'npm install'
     cwd dir
+    command 'npm install'
   end
 
   template "/etc/systemd/system/#{service_name}.service" do
@@ -46,6 +46,33 @@ action :run do
     notifies :stop, "service[#{service_name}]", :delayed
     notifies :start, "service[#{service_name}]", :delayed
   end
+
+
+ template "#{dir}/config/local.js" do
+    source "local.js.erb"
+    mode 0660
+    group deploy[:group]
+
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    end
+
+    variables(
+      :host =>     (deploy[:database][:host] rescue nil),
+      :user =>     (deploy[:database][:username] rescue nil),
+      :password => (deploy[:database][:password] rescue nil),
+      :db =>       (deploy[:database][:database] rescue nil),
+      :table =>    (node[:phpapp][:dbtable] rescue nil)
+    )
+
+  end
+
+
+
+
+
 
   service service_name do
     provider Chef::Provider::Service::Systemd
