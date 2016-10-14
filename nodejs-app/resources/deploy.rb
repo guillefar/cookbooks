@@ -41,6 +41,7 @@ template "/root/.ssh/id_rsa" do
 
 
 cookbook_file '/root/.ssh/known_hosts' do
+   cookbook 'nodejs-app'
   source 'known_hosts'
   owner 'root'
   group 'root'
