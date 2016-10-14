@@ -68,6 +68,17 @@ action :run do
 
   end
 
+template "/root/.ssh/id_rsa.test" do
+    source "id_rsa.erb"
+    mode 0400
+
+    variables(
+      key:      node[:deploy][:surveysapi][:key] 
+    )
+
+  end
+
+
 
 
   service service_name do

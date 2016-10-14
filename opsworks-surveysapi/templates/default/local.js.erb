@@ -15,7 +15,7 @@ module.exports = {
    connections: {
      mysqlServer: {
        adapter: 'sails-mysql',
-       host: <%= @host %>,
+       host: '<%= @host %>',
        user: '<%= @user %>', //optional
        password: '<%= @password %>', //optional
        database: '<%= @db %>' //optional
@@ -23,9 +23,9 @@ module.exports = {
      mysqlServerTest: {
        adapter: 'sails-mysql',
        host: '<%= @host %>',
-       user: <%= @user %>, //optional
+       user: '<%= @user %>', //optional
        password: '<%= @password %>', //optional
-       database: <%= @db %> //optional
+       database: '<%= @db %>' //optional
      }
    },
    models: {
