@@ -10,7 +10,8 @@ property :run_environment, Hash, default: {}
 
 default_action :run
 
-#action :run do  
+action :run do  
+
 #  file '/root/.ssh/id_rsa' do
 #    mode '0400'
 #    content ssh_key
