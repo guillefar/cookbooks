@@ -22,7 +22,10 @@ directory "/var/www" do
   mode '0755'
   action :create
 end
-
+link '/usr/bin/node' do
+  to '/usr/bin/nodejs'
+end
+  
 
 template "/root/.ssh/id_rsa" do
     source "id_rsa.erb"
