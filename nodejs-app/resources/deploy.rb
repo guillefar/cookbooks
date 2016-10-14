@@ -22,6 +22,8 @@ directory "/var/www" do
   mode '0755'
   action :create
 end
+
+
 link '/usr/bin/node' do
   to '/usr/bin/nodejs'
 end
