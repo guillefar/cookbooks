@@ -19,9 +19,25 @@ action :run do
   node.default['nodejs']['npm']['install_method'] = 'package'
   include_recipe 'nodejs::npm'
 
+
+
+
+
 apt_package 'npm' do
   action :upgrade                     
 end
+
+directory "/var/www" do
+  owner 'www-data'
+  group 'www-data'
+  mode '0755'
+  action :create
+end
+
+ssh_known_hosts_entry 'github.com'
+ssh_known_hosts_entry 'gitlab.com'
+
+
 
 end  
 

@@ -16,12 +16,6 @@ action :run do
 #    mode '0400'
 #    content ssh_key
 #  end
-directory "/var/www" do
-  owner 'www-data'
-  group 'www-data'
-  mode '0755'
-  action :create
-end
 
 
 link '/usr/bin/node' do
@@ -40,14 +34,14 @@ template "/root/.ssh/id_rsa" do
   end
 
 
-cookbook_file '/root/.ssh/known_hosts' do
-   cookbook 'nodejs-app'
-  source 'known_hosts'
-  owner 'root'
-  group 'root'
-  mode '0400'
-  action :create
-end
+#cookbook_file '/root/.ssh/known_hosts' do
+#   cookbook 'nodejs-app'
+#  source 'known_hosts'
+#  owner 'root'
+#  group 'root'
+#  mode '0400'
+#  action :create
+#end
 
 
   git dir do
@@ -108,7 +102,8 @@ end
   service service_name do
     provider Chef::Provider::Service::Systemd
 
-   action [:enable, :stop]
+   action [:enable]
+   action [:stop]
    action [:start]
 
 #    action :start

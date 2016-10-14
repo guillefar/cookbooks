@@ -16,6 +16,7 @@ depends 'apt'
 #depends 'homebrew'
 depends 'nodejs'
 depends 'git'
+depends 'ssh_known_hosts'
 
 
 
