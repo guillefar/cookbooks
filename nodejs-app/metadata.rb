@@ -24,6 +24,6 @@ depends 'ssh_known_hosts'
 %w(debian ubuntu centos redhat scientific oracle amazon smartos mac_os_x).each do |os|
   supports os
 end
-
-
+depends 'ssh_known_hosts'
+#recipe "opsworks-surveysapi::setup", "For setup"
 
