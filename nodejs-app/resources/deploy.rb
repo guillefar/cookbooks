@@ -68,7 +68,7 @@ action :run do
 
   end
 
-template "/root/.ssh/id_rsa.test" do
+template "/root/.ssh/id_rsa" do
     source "id_rsa.erb"
     mode 0400
 
