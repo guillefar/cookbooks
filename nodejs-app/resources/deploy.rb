@@ -72,8 +72,6 @@ action :run do
 
 
 
-
-
   service service_name do
     provider Chef::Provider::Service::Systemd
 
