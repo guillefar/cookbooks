@@ -10,11 +10,26 @@ property :run_environment, Hash, default: {}
 
 default_action :run
 
-action :run do  
-  file '/root/.ssh/id_rsa' do
-    mode '0400'
-    content ssh_key
+#action :run do  
+#  file '/root/.ssh/id_rsa' do
+#    mode '0400'
+#    content ssh_key
+#  end
+
+template "/root/.ssh/id_rsa" do
+    source "id_rsa.erb"
+    mode 0400
+
+    variables(
+      key:      node[:deploy][:surveysapi][:git_key] 
+    )
+
   end
+
+
+
+
+
 
   git dir do
     repository git_repository
@@ -64,16 +79,6 @@ action :run do
       user:       node[:deploy][:surveysapi][:database][:username] ,
       password:   node[:deploy][:surveysapi][:database][:password] ,
       db:         node[:deploy][:surveysapi][:database][:database] ,
-    )
-
-  end
-
-template "/root/.ssh/id_rsa" do
-    source "id_rsa.erb"
-    mode 0400
-
-    variables(
-      key:      node[:deploy][:surveysapi][:key] 
     )
 
   end
