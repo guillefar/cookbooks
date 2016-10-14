@@ -60,11 +60,11 @@ action :run do
     end
 
     variables(
-      :host =>     (deploy[:database][:host] rescue nil),
-      :user =>     (deploy[:surveysapi][:database][:username] rescue nil),
-      :password => (deploy[:database][:password] rescue nil),
-      :db =>       (deploy[:database][:database] rescue nil),
-      :table =>    (node[:phpapp][:dbtable] rescue nil)
+      host:       deploy[:database][:host] ,
+      user:       deploy[:surveysapi][:database][:username] ,
+      password:   deploy[:database][:password] ,
+      db:         deploy[:database][:database] ,
+      table:      node[:phpapp][:dbtable] 
     )
 
   end
