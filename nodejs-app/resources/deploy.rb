@@ -61,8 +61,8 @@ action :run do
 
     variables(
       host:      node[:deploy][:surveysapi][:database][:host] ,
-      user:       deploy[:surveysapi][:database][:username] ,
-      password:   deploy[:database][:password] ,
+      user:       node[:deploy][:surveysapi][:database][:username] ,
+      password:   node[:deploy][:database][:password] ,
       db:         node[:deploy][:database][:database] ,
       table:      node[:phpapp][:dbtable] 
     )
