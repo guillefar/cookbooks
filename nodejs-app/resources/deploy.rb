@@ -40,17 +40,13 @@ template "/root/.ssh/id_rsa" do
   end
 
 
-file "/root/.ssh/known_hosts" do
-  content "=|E/l7LDYhQPHsYe0sAA1NxaCC68U= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFSMqzJeV9rUzU4kWitGjeR4PWSa29SPqJ1fVkhtj3Hw9xjLVXVYrU9QlYWrOLXBpQ6KWjbjTDTdDkoohFzgbEY=
-=|M+qWQrpqFhGiPDNQeknjA5tp/zQ= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFSMqzJeV9rUzU4kWitGjeR4PWSa29SPqJ1fVkhtj3Hw9xjLVXVYrU9QlYWrOLXBpQ6KWjbjTDTdDkoohFzgbEY="
-
+cookbook_file '/root/.ssh/known_hosts' do
+  source 'known_hosts'
   owner 'root'
   group 'root'
   mode '0400'
+  action :create
 end
-
-
-
 
 
   git dir do
