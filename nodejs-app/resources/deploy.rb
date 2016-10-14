@@ -51,7 +51,7 @@ action :run do
  template "#{dir}/config/local.js" do
     source "local.js.erb"
     mode 0660
-    group deploy[:group]
+    group "www-data"
 
     if platform?("ubuntu")
       owner "www-data"
