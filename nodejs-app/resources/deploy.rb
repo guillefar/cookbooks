@@ -34,14 +34,7 @@ template "/root/.ssh/id_rsa" do
   end
 
 
-#cookbook_file '/root/.ssh/known_hosts' do
-#   cookbook 'nodejs-app'
-#  source 'known_hosts'
-#  owner 'root'
-#  group 'root'
-#  mode '0400'
-#  action :create
-#end
+
 
 
   git dir do

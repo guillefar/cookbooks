@@ -29,8 +29,20 @@ directory "/var/www" do
   action :create
 end
 
-ssh_known_hosts_entry 'github.com'
-ssh_known_hosts_entry 'gitlab.com'
+
+
+#cookbook_file '/root/.ssh/known_hosts' do
+#   cookbook 'nodejs-app'
+#  source 'known_hosts'
+#  owner 'root'
+#  group 'root'
+#  mode '0400'
+#  action :create
+#end
+
+
+#ssh_known_hosts_entry 'github.com'
+#ssh_known_hosts_entry 'gitlab.com'
 
 
 
