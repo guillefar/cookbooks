@@ -17,7 +17,7 @@ depends 'apt'
 depends 'nodejs'
 depends 'git'
 depends 'nodejs-app'
-depends 'ssh_known_hosts'
+#depends 'ssh_known_hosts'
 
 
 
@@ -29,4 +29,4 @@ end
 
 recipe "opsworks-surveysapi::deploy", "For deployment"
 recipe "opsworks-surveysapi::setup", "For setup"
-recipe 'ssh_known_hosts', "SSH hosts"
+#recipe 'ssh_known_hosts', "SSH hosts"
