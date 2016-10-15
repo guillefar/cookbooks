@@ -29,6 +29,13 @@ directory "/var/www" do
   action :create
 end
 
+directory "/root/certs" do
+  owner 'www-data'
+  group 'www-data'
+  mode '0755'
+  action :create
+end
+
 
 
 cookbook_file '/root/.ssh/known_hosts' do
@@ -39,6 +46,27 @@ cookbook_file '/root/.ssh/known_hosts' do
   mode '0400'
   action :create
 end
+
+
+cookbook_file '/root/certs/server.crt' do
+  source 'server.crt'
+  owner 'root'
+  group 'root'
+  mode '0400'
+  action :create
+end
+
+
+cookbook_file '/root/certs/server.key' do
+  source 'server.key'
+  owner 'root'
+  group 'root'
+  mode '0400'
+  action :create
+end
+
+
+
 
 
 #ssh_known_hosts_entry 'github.com'
