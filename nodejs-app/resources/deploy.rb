@@ -5,6 +5,7 @@ property :git_revision, String, default: 'master'
 property :service_name, String, required: true, name_property: true  
 property :run_cmd, String, default: '/usr/local/bin/npm start'  
 property :run_environment, Hash, default: {}
+property :letsencryptsub, String  
 
 
 
@@ -85,6 +86,7 @@ template "/root/.ssh/id_rsa" do
       user:       node[:deploy][:surveysapi][:database][:username] ,
       password:   node[:deploy][:surveysapi][:database][:password] ,
       db:         node[:deploy][:surveysapi][:database][:database] ,
+      subdomain: letsencryptsub
     )
 
   end
