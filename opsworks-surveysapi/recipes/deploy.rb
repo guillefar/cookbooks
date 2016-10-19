@@ -10,8 +10,10 @@ app_data = search('aws_opsworks_app', "shortname:surveysapi").first
 
 
 
-revision_string = instance['ec2_instance_id'].spl­it(//).las­t(4).join
-revision = revision_string.­split(//).­first(3).j­oin
+#revision_string = instance['ec2_instance_id'].spl­it(//).las­t(4).join
+#revision = revision_string.­split(//).­first(3).j­oin
+revision = layer
+
 
 #app_data = search('aws_opsworks_app', "app_id:1915b21a-5396-47b8-8688-0980e5780d8e").first  
 
