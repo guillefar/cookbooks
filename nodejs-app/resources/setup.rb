@@ -1,6 +1,7 @@
 property :nodejs_version, String, default: '5.10.1'  
 property :nodejs_checksum, String
 property :adminemail, String
+property :subdomain, String
 
 
 default_action :run
