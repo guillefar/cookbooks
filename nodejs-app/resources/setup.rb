@@ -23,7 +23,7 @@ apt_package 'npm' do
   action :upgrade                     
 end
 
-apt_package 'letscrypt' do
+apt_package 'letsencrypt' do
   action :upgrade                     
 end
 
