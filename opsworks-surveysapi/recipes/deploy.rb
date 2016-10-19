@@ -19,8 +19,6 @@ nodejs_app_deploy 'surveysapi' do
 #  git_revision app_data['app_source']['revision']
 
  # NombreAppSTG1
-  app_data['app_source']['revision'][-4..-2­]   
-if 
 
   if app_data['app_source']['revision'][-4..-2­]?("dev")
       git_rev="dev"
