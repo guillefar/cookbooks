@@ -1,5 +1,6 @@
 property :nodejs_version, String, default: '5.10.1'  
 property :nodejs_checksum, String
+property :nodejs_checksum, String
 
 
 default_action :run
