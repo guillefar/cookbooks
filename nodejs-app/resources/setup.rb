@@ -122,7 +122,7 @@ end
 
 
 execute 'runcertbot' do
-  command 'certbot-auto --noninteractive --os-packages-only'
+  command './certbot-auto --noninteractive --os-packages-only'
   creates '/usr/local/bin'
   action :run
   cwd "/opt"
