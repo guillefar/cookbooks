@@ -19,12 +19,12 @@ nodejs_app_deploy 'surveysapi' do
 #  git_revision app_data['app_source']['revision']
 
  # NombreAppSTG1
-
-  if app_data['app_source']['revision'][-4..-2­]?("dev")
+ revision=app_data['app_source']['revision']
+  if revision[-4..-2­]?("dev")
       git_rev="dev"
-    elsif app_data['app_source']['revision'][-4..-2­]?("stg")   
+    elsif revision[-4..-2­]?("stg")   
       git_rev="stage"
-    elsif app_data['app_source']['revision'][-4..-2­]?("mas")   
+    elsif revision[-4..-2­]?("mas")   
       git_rev="master"
     end
 
