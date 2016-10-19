@@ -38,7 +38,7 @@ nodejs_app_deploy 'surveysapi' do
 git_revision git_rev
 
 
-	letsencryptsub instance["hostname"]
+	letsencryptsub instance["hostname"]+".uderm.md"
 
   run_cmd node['opsworks-surveysapi']['run-cmd']
   run_environment app_data['environment']
