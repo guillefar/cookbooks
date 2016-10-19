@@ -1,6 +1,5 @@
 # get own instances + layer name
 instance = search('aws_opsworks_instance', 'self:true').first  
-instance_ec2_id = search('ec2_instance_id', 'self:true').first  
 
 layer = search('aws_opsworks_layer', "layer_id:#{instance['layer_ids'].first}").first
 
@@ -11,7 +10,7 @@ app_data = search('aws_opsworks_app', "shortname:surveysapi").first
 
 
 
-revision_string = instance_ec2_id.spl­it(//).las­t(4).join
+revision_string = instance['ec2_instance_id'].spl­it(//).las­t(4).join
 revision = revision_string.­split(//).­first(3).j­oin
 
 #app_data = search('aws_opsworks_app', "app_id:1915b21a-5396-47b8-8688-0980e5780d8e").first  
