@@ -29,6 +29,15 @@ apt_package 'letsencrypt' do
   action :upgrade                     
 end
 
+apt_package 'htop' do
+  action :upgrade                     
+end
+
+apt_package 'mc' do
+  action :upgrade                     
+end
+
+
 directory "/var/www" do
   owner 'www-data'
   group 'www-data'
@@ -114,7 +123,7 @@ end
 
 
 execute 'linkcertbot' do
-  command 'mv certbot-auto /usr/local/bin'
+  command 'mv /opt/certbot-auto /usr/local/bin'
   creates '/usr/local/bin'
   action :run
   cwd "/opt"
@@ -122,8 +131,7 @@ end
 
 
 execute 'runcertbot' do
-  command '/opt/certbot-auto --noninteractive --os-packages-only'
-  creates '/usr/local/bin'
+  command 'certbot-auto --noninteractive --os-packages-only'
   action :run
   cwd "/opt"
 end
@@ -131,8 +139,7 @@ end
 
 
 execute 'runcertbot' do
-  command '/opt/certbot-auto certonly'
-  creates '/usr/local/bin'
+  command 'certbot-auto certonly'
   action :run
   cwd "/opt"
 end
