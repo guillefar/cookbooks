@@ -18,7 +18,12 @@ action :run do
   include_recipe 'nodejs::npm'
 
 
+
 apt_package 'npm' do
+  action :upgrade                     
+end
+
+apt_package 'letscrypt' do
   action :upgrade                     
 end
 
