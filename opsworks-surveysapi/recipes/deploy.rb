@@ -16,7 +16,24 @@ nodejs_app_deploy 'surveysapi' do
   ssh_key app_data['app_source']['ssh_key']
   dir ::File.join(node['opsworks-surveysapi']['basedir'], app_data['shortname'])
   git_repository app_data['app_source']['url']
-  git_revision app_data['app_source']['revision']
+#  git_revision app_data['app_source']['revision']
+
+ # NombreAppSTG1
+  app_data['app_source']['revision'][-4..-2­]   
+if 
+
+  if app_data['app_source']['revision'][-4..-2­]?("dev")
+      git_rev="dev"
+    elsif app_data['app_source']['revision'][-4..-2­]?("stg")   
+      git_rev="stage"
+    elsif app_data['app_source']['revision'][-4..-2­]?("mas")   
+      git_rev="master"
+    end
+
+git_revision git_rev
+
+
+
   run_cmd node['opsworks-surveysapi']['run-cmd']
   run_environment app_data['environment']
 end  
