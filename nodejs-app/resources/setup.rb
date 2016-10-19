@@ -73,6 +73,62 @@ end
 
 
 
+template "/etc/letsencrypt/cli.ini" do
+    source "cli.ini.erb"
+    mode 0400
+
+    variables(
+      domain:      subdomain,
+      adminemail:  adminemail,
+
+    )
+
+  end
+
+
+execute 'getcertbot' do
+  command 'wget https://dl.eff.org/certbot-auto'
+  creates 'https://dl.eff.org/certbot-auto'
+  action :run
+  cwd "/opt"
+end
+
+
+execute 'permcertbot' do
+  command 'chmod a+x certbot-auto'
+  action :run
+  cwd "/opt"
+end
+
+
+execute 'linkcertbot' do
+  command 'mv certbot-auto /usr/local/bin'
+  creates '/usr/local/bin'
+  action :run
+  cwd "/opt"
+end
+
+
+execute 'runcertbot' do
+  command 'certbot-auto --noninteractive --os-packages-only'
+  creates '/usr/local/bin'
+  action :run
+  cwd "/opt"
+end
+
+
+
+execute 'runcertbot' do
+  command 'certbot-auto certonly'
+  creates '/usr/local/bin'
+  action :run
+  cwd "/opt"
+end
+
+	
+
+
+
 
 #ssh_known_hosts_entry 'github.com'
 #ssh_known_hosts_entry 'gitlab.com'
