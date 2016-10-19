@@ -122,12 +122,22 @@ execute 'permcertbot' do
 end
 
 
-execute 'linkcertbot' do
-  command 'mv /opt/certbot-auto /usr/local/bin'
-  creates '/usr/local/bin'
-  action :run
-  cwd "/opt"
+
+
+remote_file "Copy certbot" do 
+  path "/usr/local/bin/certbot-auto" 
+  source "file:////opt/certbot-auto "
+  owner 'root'
+  group 'root'
+  mode 0755
 end
+
+#execute 'linkcertbot' do
+ # command 'mv /opt/certbot-auto /usr/local/bin'
+ # creates '/usr/local/bin'
+ # action :run
+ # cwd "/opt"
+#end
 
 
 execute 'runcertbot' do
