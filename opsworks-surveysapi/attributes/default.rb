@@ -1,7 +1,7 @@
 #   setup attributes
 default['opsworks-surveysapi']['nodejs']['version'] = '6.5.0'  
 default['opsworks-surveysapi']['nodejs']['checksum'] = 'd7742558bb3331e41510d6e6f1f7b13c0527aecc00a63c3e05fcfd44427ff778'
-
+default['opsworks-surveysapi']['nodejs']['adminemail'] = "admin@uderm.md"
 
 # 12d5b79b8b914c2439b6aa542b47f28c0d6dc9c5438eeda629f26021eb839dac
 
