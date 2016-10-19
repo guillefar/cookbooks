@@ -45,7 +45,6 @@ directory "/etc/letsencrypt/" do
 end
 
 
-
 directory "/root/certs" do
   owner 'www-data'
   group 'www-data'
@@ -86,6 +85,7 @@ end
 
 
 template "/etc/letsencrypt/cli.ini" do
+	cookbook 'nodejs-app'
     source "cli.ini.erb"
     mode 0400
 
