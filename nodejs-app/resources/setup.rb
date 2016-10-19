@@ -36,6 +36,16 @@ directory "/var/www" do
   action :create
 end
 
+
+directory "/etc/letsencrypt/" do
+  owner 'www-data'
+  group 'www-data'
+  mode '0755'
+  action :create
+end
+
+
+
 directory "/root/certs" do
   owner 'www-data'
   group 'www-data'
