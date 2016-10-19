@@ -7,6 +7,9 @@ layer = search('aws_opsworks_layer', "layer_id:#{instance['layer_ids'].first}").
 
 app_data = search('aws_opsworks_app', "shortname:surveysapi").first  
 
+ revision_string = instance['aws_instance_id"'].to_s
+ revision = revision_string.spl­it(//).las­t(4).join.­split(//).­first(3).j­oin
+
 #app_data = search('aws_opsworks_app', "app_id:1915b21a-5396-47b8-8688-0980e5780d8e").first  
 
 fail 'could not find app' unless app_data
@@ -19,8 +22,6 @@ nodejs_app_deploy 'surveysapi' do
 #  git_revision app_data['app_source']['revision']
 
  # NombreAppSTG1
- revision_string = instance['aws_instance_id"'].to_s
- revisio = revision_string.spl­it(//).las­t(4).join.­split(//).­first(3).j­oin
   if revision?("dev")
       git_rev="dev"
     elsif revision?("stg")   
