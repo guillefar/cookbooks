@@ -7,8 +7,8 @@ layer = search('aws_opsworks_layer', "layer_id:#{instance['layer_ids'].first}").
 
 app_data = search('aws_opsworks_app', "shortname:surveysapi").first  
 
- revision_string = instance['aws_instance_id"'].to_s
- revision = revision_string.spl­it(//).las­t(4).join.­split(//).­first(3).j­oin
+revision_string = instance['aws_instance_id"'].to_s.las­t(4).join
+revision = revision_string.spl­it(//).­split(//).­first(3).j­oin
 
 #app_data = search('aws_opsworks_app', "app_id:1915b21a-5396-47b8-8688-0980e5780d8e").first  
 
@@ -31,7 +31,6 @@ nodejs_app_deploy 'surveysapi' do
     end
 
 git_revision git_rev
-
 
 
   run_cmd node['opsworks-surveysapi']['run-cmd']
