@@ -29,7 +29,7 @@ template "/root/.ssh/id_rsa" do
     mode 0400
 
     variables(
-      key:      node[:deploy][:payments][:git_key] 
+      key:      node[:deploy][:nodeapp][:git_key] 
     )
 
   end
