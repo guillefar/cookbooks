@@ -29,7 +29,7 @@ template "/root/.ssh/id_rsa" do
     mode 0400
 
     variables(
-      key:      node[:deploy][:surveysapi][:git_key] 
+      key:      node[:deploy][:payments][:git_key] 
     )
 
   end
@@ -82,10 +82,10 @@ template "/root/.ssh/id_rsa" do
     end
 
     variables(
-      host:      node[:deploy][:surveysapi][:database][:host] ,
-      user:       node[:deploy][:surveysapi][:database][:username] ,
-      password:   node[:deploy][:surveysapi][:database][:password] ,
-      db:         node[:deploy][:surveysapi][:database][:database] ,
+      host:      node[:deploy][:nodeapp][:database][:host] ,
+      user:       node[:deploy][:nodeapp][:database][:username] ,
+      password:   node[:deploy][:nodeapp][:database][:password] ,
+      db:         node[:deploy][:nodeapp][:database][:database] ,
       subdomain: letsencryptsub
     )
 
