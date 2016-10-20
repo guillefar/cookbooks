@@ -126,7 +126,7 @@ end
 
 remote_file "Copy certbot" do 
   path "/usr/local/bin/certbot-auto" 
-  source "file:////opt/certbot-auto "
+  source "file:////opt/certbot-auto"
   owner 'root'
   group 'root'
   mode 0755

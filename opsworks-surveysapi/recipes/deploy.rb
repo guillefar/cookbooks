@@ -26,16 +26,8 @@ nodejs_app_deploy 'surveysapi' do
   git_repository app_data['app_source']['url']
 #  git_revision app_data['app_source']['revision']
 
- # NombreAppSTG1
-  if revision == "dev"
-      git_rev="dev"
-    elsif revision == "stg"   
-      git_rev="stage"
-    elsif revision == "mas"  
-      git_rev="master"
-    end
 
-git_revision git_rev
+git_revision revision
 
 
 	letsencryptsub instance["hostname"]+".uderm.md"
