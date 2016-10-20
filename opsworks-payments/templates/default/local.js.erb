@@ -1,0 +1,37 @@
+module.exports = {
+
+  ssl: {
+    // ca: require('fs').readFileSync(__dirname + './ssl/my_apps_ssl_gd_bundle.crt'),
+    key: require('fs').readFileSync('/etc/letsencrypt/live/<%= @subdomain %>/privkey.pem'),
+    cert: require('fs').readFileSync('/etc/letsencrypt/live/<%= @subdomain %>/cert.pem')
+  },
+
+
+  port: process.env.PORT || 1338,
+
+
+   environment: process.env.NODE_ENV || 'development',
+   proxyHost: 'local.surveys.cloudclinic.com',
+   connections: {
+     mysqlServer: {
+       adapter: 'sails-mysql',
+       host: '<%= @host %>',
+       user: '<%= @user %>', //optional
+       password: '<%= @password %>', //optional
+       database: '<%= @db %>' //optional
+     },
+     mysqlServerTest: {
+       adapter: 'sails-mysql',
+       host: '<%= @host %>',
+       user: '<%= @user %>', //optional
+       password: '<%= @password %>', //optional
+       database: '<%= @db %>' //optional
+     }
+   },
+   models: {
+     connection: 'mysqlServer'
+   },
+   jwtTTL: 36000
+};
+
+
