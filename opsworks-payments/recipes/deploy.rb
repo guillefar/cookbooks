@@ -20,6 +20,7 @@ revision = layer['shortname']
 fail 'could not find app' unless app_data
 
 # deploy the application
+
 nodejs_app_deploy 'payments' do  
 	#  ssh_key app_data['app_source']['ssh_key']
   	#dir ::File.join(node['opsworks-payments']['basedir'], app_data['shortname'])
@@ -28,10 +29,10 @@ nodejs_app_deploy 'payments' do
 #  git_revision app_data['app_source']['revision']
 
 
-	git_revision revision
+#	git_revision revision
 
 
-	letsencryptsub instance["hostname"]+".uderm.md"
+#	letsencryptsub instance["hostname"]+".uderm.md"
 
   	#run_cmd node['opsworks-payments']['run-cmd']
   	# run_environment app_data['environment']
