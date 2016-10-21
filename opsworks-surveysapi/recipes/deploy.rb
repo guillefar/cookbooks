@@ -20,7 +20,7 @@ revision = layer['shortname']
 fail 'could not find app' unless app_data
 
 # deploy the application
-nodejs_app_deploy 'surveysapi' do  
+nodejs_app_deploy 'surveysapi' do
   ssh_key app_data['app_source']['ssh_key']
   dir ::File.join(node['opsworks-surveysapi']['basedir'], app_data['shortname'])
   git_repository app_data['app_source']['url']
