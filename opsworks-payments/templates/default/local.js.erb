@@ -11,7 +11,7 @@ module.exports = {
 
 
    environment: process.env.NODE_ENV || 'development',
-   proxyHost: 'local.surveys.cloudclinic.com',
+   proxyHost: '<%= @subdomain %>',
    connections: {
      mysqlServer: {
        adapter: 'sails-mysql',
