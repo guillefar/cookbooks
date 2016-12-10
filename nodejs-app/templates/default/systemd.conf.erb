@@ -12,6 +12,7 @@ ExecStart=<%= @cmd %>
 #WorkingDirectory=<%= @chdir %>
 
 Restart=always
+#<%= @restart_mode %>
 RestartSec=7                      # Restart service after 7 seconds if node service crashes
 StandardOutput=syslog               # Output to syslog
 StandardError=syslog                # Output to syslog

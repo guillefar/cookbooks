@@ -98,7 +98,17 @@ template "/root/.ssh/id_rsa" do
     provider Chef::Provider::Service::Systemd
 
    action [:enable]
-   action [:stop]
+
+  end
+  service service_name do
+    provider Chef::Provider::Service::Systemd
+
+      action [:stop]
+
+  end
+  service service_name do
+    provider Chef::Provider::Service::Systemd
+
    action [:start]
 
 #    action :start
