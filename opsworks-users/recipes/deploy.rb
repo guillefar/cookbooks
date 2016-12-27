@@ -21,7 +21,7 @@ revision = layer['shortname']
 fail 'could not find app' unless app_data
 
 # deploy the application
-
+appname app_data['shortname']
 
 nodejs_app_deploy 'users' do
 
