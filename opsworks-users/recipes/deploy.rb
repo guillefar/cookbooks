@@ -21,7 +21,7 @@ revision = layer['shortname']
 fail 'could not find app' unless app_data
 
 # deploy the application
-appname=app_data['shortname']
+appname = app_data['shortname']
 webroot = '/var/www/'+appname
 
 nodejs_app_deploy 'users' do
