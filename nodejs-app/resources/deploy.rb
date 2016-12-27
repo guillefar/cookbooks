@@ -127,7 +127,7 @@ newrelic_server_monitor 'Install' do
   license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
 end
 
-newrelic_agent_nodejs '/var/my_node_approot' do
+newrelic_agent_nodejs '/var/www/'+appname do
 
   license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
 
