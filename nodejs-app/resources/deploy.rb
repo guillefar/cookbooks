@@ -6,7 +6,7 @@ property :service_name, String, required: true, name_property: true
 property :run_cmd, String, default: '/usr/local/bin/npm start'  
 property :run_environment, Hash, default: {}
 property :letsencryptsub, String  
-property :webroot, String, required: true 
+property :webroot, String
 
 
 default_action :run
