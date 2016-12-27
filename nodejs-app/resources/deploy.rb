@@ -124,14 +124,13 @@ template "/root/.ssh/id_rsa" do
 
 
 newrelic_server_monitor 'Install' do
-  node['newrelic']['license'] ='9b7c5df40898dff718fd0deb72ecb6b1844c0973'
   license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
 end
 
 newrelic_agent_nodejs '/var/my_node_approot' do
-  node['newrelic']['license'] ='9b7c5df40898dff718fd0deb72ecb6b1844c0973'
+
   license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
-  app_name 'my_nodejs_app'
+
 end
 
 

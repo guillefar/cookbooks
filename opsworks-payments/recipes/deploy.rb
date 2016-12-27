@@ -9,6 +9,11 @@ layer = search('aws_opsworks_layer', "layer_id:#{instance['layer_ids'].first}").
 app_data = search('aws_opsworks_app', "shortname:payments").first  
 
 
+node['newrelic']['license'] ='9b7c5df40898dff718fd0deb72ecb6b1844c0973'
+
+
+
+
 
 #revision_string = instance['ec2_instance_id'].spl­it(//).las­t(4).join
 #revision = revision_string.­split(//).­first(3).j­oin
