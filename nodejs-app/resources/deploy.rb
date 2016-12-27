@@ -15,7 +15,7 @@ default_action :run
 action :run do  
 
   include_recipe 'newrelic'
-    node['newrelic']['license'] ='9b7c5df40898dff718fd0deb72ecb6b1844c0973'
+#    node['newrelic']['license'] ='9b7c5df40898dff718fd0deb72ecb6b1844c0973'
 #  file '/root/.ssh/id_rsa' do
 #    mode '0400'
 #    content ssh_key
