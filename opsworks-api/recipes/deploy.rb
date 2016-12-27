@@ -28,7 +28,7 @@ nodejs_app_deploy 'api' do
 
 
 	  ssh_key app_data['app_source']['ssh_key']
-  	dir ::File.join(node['opsworks-api']['basedir'], app_data['shortname'])
+  	dir ::File.join(node['opsworks-api']['basedir'], appname)
   	git_repository app_data['app_source']['url']
 
 #  git_revision app_data['app_source']['revision']
