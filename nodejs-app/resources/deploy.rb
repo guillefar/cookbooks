@@ -6,6 +6,7 @@ property :service_name, String, required: true, name_property: true
 property :run_cmd, String, default: '/usr/local/bin/npm start'  
 property :run_environment, Hash, default: {}
 property :letsencryptsub, String  
+property :appname, String
 property :webroot, String
 
 
@@ -127,7 +128,7 @@ newrelic_server_monitor 'Install' do
 end
 
 newrelic_agent_nodejs webroot do
-
+  app_name appname
   license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
 
 end
