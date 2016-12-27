@@ -7,7 +7,9 @@ property :run_cmd, String, default: '/usr/local/bin/npm start'
 property :run_environment, Hash, default: {}
 property :letsencryptsub, String  
 
+  include_recipe 'newrelic'
 
+    node['newrelic']['license'] ='9b7c5df40898dff718fd0deb72ecb6b1844c0973'
 
 default_action :run
 
@@ -117,6 +119,18 @@ template "/root/.ssh/id_rsa" do
  #   subscribes :restart, "execute[npm install #{service_name}]", :delayed
 
   end
+
+
+
+newrelic_server_monitor 'Install' do
+  license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
+end
+
+newrelic_agent_nodejs '/var/my_node_approot' do
+  license '0000ffff0000ffff0000ffff0000ffff0000ffff'
+  app_name 'my_nodejs_app'
+end
+
 
 
 

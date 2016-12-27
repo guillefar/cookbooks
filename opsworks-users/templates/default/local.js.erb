@@ -6,7 +6,7 @@ module.exports = {
     cert: require('fs').readFileSync('/etc/letsencrypt/live/<%= @subdomain %>/cert.pem')
   },
 
-
+port: process.env.PORT || 443,  
 
 
    environment: process.env.NODE_ENV || 'development',
