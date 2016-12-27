@@ -39,9 +39,6 @@ apt_package 'mc' do
 end
 
 
-apt_package 'python' do
-  action :upgrade                     
-end
 
 directory "/var/www" do
   owner 'www-data'
