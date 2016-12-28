@@ -28,7 +28,7 @@ nodejs_app_deploy 'surveysapi' do
 
 	appname  app_data['shortname']
 webroot  '/var/www/'+ appname
-  	server_name instance
+  	  	server_name instance['hostname']
   ssh_key app_data['app_source']['ssh_key']
   dir ::File.join(node['opsworks-surveysapi']['basedir'],appname )
   git_repository app_data['app_source']['url']
