@@ -52,9 +52,8 @@ template "/root/.ssh/id_rsa" do
 
 
 
-  execute "rm /var/www/#{service_name}/node_modules/.bin/newrelic-naming-rules" do
-    command 'npm prune'
-    cwd dir
+  execute "delete_newrelic" do
+    command "rm /var/www/#{service_name}/node_modules/.bin/newrelic-naming-rules"
   end
 
 
