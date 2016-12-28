@@ -9,8 +9,7 @@ layer = search('aws_opsworks_layer', "layer_id:#{instance['layer_ids'].first}").
 app_data = search('aws_opsworks_app', "shortname:payments").first  
 
 
-node['newrelic']['license'] ='9b7c5df40898dff718fd0deb72ecb6b1844c0973'
-
+node.default['newrelic']['license'] ='9b7c5df40898dff718fd0deb72ecb6b1844c0973'
 
 
 
@@ -28,10 +27,11 @@ fail 'could not find app' unless app_data
 
 
 nodejs_app_deploy 'payments' do
-
+	appname  app_data['shortname']
+	webroot  '/var/www/'+ appname
 
 	  ssh_key app_data['app_source']['ssh_key']
-  	dir ::File.join(node['opsworks-payments']['basedir'], app_data['shortname'])
+  	dir ::File.join(node['opsworks-payments']['basedir'], appname)
   	git_repository app_data['app_source']['url']
 
 #  git_revision app_data['app_source']['revision']

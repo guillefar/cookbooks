@@ -17,7 +17,7 @@ revision = layer['shortname']
 
 
 #app_data = search('aws_opsworks_app', "app_id:1915b21a-5396-47b8-8688-0980e5780d8e").first  
-appname=app_data['shortname']
+
 
 
 fail 'could not find app' unless app_data
@@ -25,6 +25,9 @@ fail 'could not find app' unless app_data
 # deploy the application
 nodejs_app_deploy 'surveysapi' do
 	
+
+	appname  app_data['shortname']
+webroot  '/var/www/'+ appname
   ssh_key app_data['app_source']['ssh_key']
   dir ::File.join(node['opsworks-surveysapi']['basedir'],appname )
   git_repository app_data['app_source']['url']
