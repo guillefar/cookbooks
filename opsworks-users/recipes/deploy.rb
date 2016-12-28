@@ -21,11 +21,12 @@ revision = layer['shortname']
 fail 'could not find app' unless app_data
 
 # deploy the application
-appname  app_data['shortname']
-webroot  '/var/www/'+ appname
+
 
 nodejs_app_deploy 'users' do
 
+appname  app_data['shortname']
+webroot  '/var/www/'+ appname
 
 	  ssh_key app_data['app_source']['ssh_key']
   	dir ::File.join(node['opsworks-users']['basedir'], app_data['shortname'])
