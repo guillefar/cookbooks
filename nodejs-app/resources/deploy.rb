@@ -53,7 +53,7 @@ template "/root/.ssh/id_rsa" do
 
 
   execute "delete_newrelic" do
-    command "rm /var/www/#{service_name}/node_modules/.bin/newrelic-naming-rules"
+    command "rm -f /var/www/#{service_name}/node_modules/.bin/newrelic-naming-rules"
   end
 
 
