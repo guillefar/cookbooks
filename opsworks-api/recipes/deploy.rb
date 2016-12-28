@@ -28,6 +28,7 @@ nodejs_app_deploy 'api' do
 
 	appname  app_data['shortname']
 	webroot  '/var/www/'+ appname
+	  	server_name instance
 
 	  ssh_key app_data['app_source']['ssh_key']
   	dir ::File.join(node['opsworks-api']['basedir'], appname)

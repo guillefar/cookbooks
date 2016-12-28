@@ -8,6 +8,9 @@ property :run_environment, Hash, default: {}
 property :letsencryptsub, String  
 property :webroot, String
 property :appname, String
+property :server_name, String
+
+     
 
 
 default_action :run
@@ -137,7 +140,7 @@ newrelic_server_monitor 'Install' do
 end
 
 newrelic_agent_nodejs webroot do
-  app_name appname
+  app_name server_name
   license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
 
 end

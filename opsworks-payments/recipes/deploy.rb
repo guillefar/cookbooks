@@ -29,7 +29,7 @@ fail 'could not find app' unless app_data
 nodejs_app_deploy 'payments' do
 	appname  app_data['shortname']
 	webroot  '/var/www/'+ appname
-
+  	server_name instance
 	  ssh_key app_data['app_source']['ssh_key']
   	dir ::File.join(node['opsworks-payments']['basedir'], appname)
   	git_repository app_data['app_source']['url']
