@@ -118,20 +118,22 @@ template "/root/.ssh/id_rsa" do
   service service_name do
     provider Chef::Provider::Service::Systemd
 
-      action [:stop]
+      action [:restart]
 
   end
-  service service_name do
-    provider Chef::Provider::Service::Systemd
 
-   action [:start]
+
+#  service service_name do
+#    provider Chef::Provider::Service::Systemd
+
+#   action [:start]
 
 #    action :start
 #    subscribes :restart, "git[#{dir}]", :delayed
  #   subscribes :restart, "execute[npm prune #{service_name}]", :delayed
  #   subscribes :restart, "execute[npm install #{service_name}]", :delayed
 
-  end
+ # end
 
 
 
