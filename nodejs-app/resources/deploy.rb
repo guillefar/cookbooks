@@ -107,6 +107,17 @@ template "/root/.ssh/id_rsa" do
   end
 
 
+newrelic_server_monitor 'Install' do
+  license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
+end
+
+newrelic_agent_nodejs webroot do
+  app_name server_name
+  license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
+
+end
+
+
 
 
   service service_name do
@@ -137,15 +148,6 @@ template "/root/.ssh/id_rsa" do
 
 
 
-newrelic_server_monitor 'Install' do
-  license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
-end
-
-newrelic_agent_nodejs webroot do
-  app_name server_name
-  license '9b7c5df40898dff718fd0deb72ecb6b1844c0973'
-
-end
 
 
 
